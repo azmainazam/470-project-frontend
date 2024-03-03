@@ -1,0 +1,152 @@
+[
+    {
+        "id":1,
+        "name": "CHATTO TURF",
+        "price": "1500",
+        "location": "2 no gate",
+        "img": "https://i.ibb.co/17h5Kgr/chotto.png",
+        "slots":[
+            "7:00 AM-8:00 AM",
+            "8:00 AM-9:00 AM",
+            "9:00 AM-10:00 AM",
+            "10:00 AM-11:00 AM",
+            "1100 AM-12:00 AM",
+            "12:00 PM-1:00 PM",
+            "1:00 PM-2:00 PM",
+            "2:00 PM-3:00 PM",
+            "3:00 PM-4:00 PM",
+            "4:00 PM-5:00 PM",
+            "5:00 PM-6:00 PM",
+            "6:00 PM-7:00 PM",
+            "8:00 PM-9:00 PM",
+            "10:00 PM-11:00 PM",
+            "11:00 PM-12:00 PM"
+
+        ]
+    },
+    {
+        "id":2,
+        "name": "Velocity",
+        "price": "1500",
+        "location": "Mosjid Goli",
+        "img": "https://i.ibb.co/9t5VFjc/velo.png",
+        "slots":[
+            "7:00 AM-8:00 AM",
+            "8:00 AM-9:00 AM",
+            "9:00 AM-10:00 AM",
+            "10:00 AM-11:00 AM",
+            "1100 AM-12:00 AM",
+            "12:00 PM-1:00 PM",
+            "1:00 PM-2:00 PM",
+            "2:00 PM-3:00 PM",
+            "3:00 PM-4:00 PM",
+            "4:00 PM-5:00 PM",
+            "5:00 PM-6:00 PM",
+            "6:00 PM-7:00 PM",
+            "8:00 PM-9:00 PM",
+            "10:00 PM-11:00 PM",
+            "11:00 PM-12:00 PM"
+
+        ]
+    },
+    {
+        "id":3,
+        "name": "SIXCT",
+        "price": "1500",
+        "location": "Chawkbazar",
+        "img": "https://i.ibb.co/TvYNzdf/6ct.jpg",
+        "slots":[
+            "7:00 AM-8:00 AM",
+            "8:00 AM-9:00 AM",
+            "9:00 AM-10:00 AM",
+            "10:00 AM-11:00 AM",
+            "1100 AM-12:00 AM",
+            "12:00 PM-1:00 PM",
+            "1:00 PM-2:00 PM",
+            "2:00 PM-3:00 PM",
+            "3:00 PM-4:00 PM",
+            "4:00 PM-5:00 PM",
+            "5:00 PM-6:00 PM",
+            "6:00 PM-7:00 PM",
+            "8:00 PM-9:00 PM",
+            "10:00 PM-11:00 PM",
+            "11:00 PM-12:00 PM"
+
+        ]
+    },
+    {
+        "id":4,
+        "name": "SICHO ARENA",
+        "price": "2500",
+        "location": "Chandgao",
+        "img":"https://i.ibb.co/cNHfpDG/sicho.jpg",
+        "slots":[
+            "7:00 AM-8:00 AM",
+            "8:00 AM-9:00 AM",
+            "9:00 AM-10:00 AM",
+            "10:00 AM-11:00 AM",
+            "1100 AM-12:00 AM",
+            "12:00 PM-1:00 PM",
+            "1:00 PM-2:00 PM",
+            "2:00 PM-3:00 PM",
+            "3:00 PM-4:00 PM",
+            "4:00 PM-5:00 PM",
+            "5:00 PM-6:00 PM",
+            "6:00 PM-7:00 PM",
+            "8:00 PM-9:00 PM",
+            "10:00 PM-11:00 PM",
+            "11:00 PM-12:00 PM"
+
+        ]
+    },
+    {
+        "id":5,
+        "name": "ACM TURF",
+        "price": "1500",
+        "location": "Katalgonj",
+        "img": "https://i.ibb.co/VB25r6k/acm.jpg",
+        "slots":[
+            "7:00 AM-8:00 AM",
+            "8:00 AM-9:00 AM",
+            "9:00 AM-10:00 AM",
+            "10:00 AM-11:00 AM",
+            "1100 AM-12:00 AM",
+            "12:00 PM-1:00 PM",
+            "1:00 PM-2:00 PM",
+            "2:00 PM-3:00 PM",
+            "3:00 PM-4:00 PM",
+            "4:00 PM-5:00 PM",
+            "5:00 PM-6:00 PM",
+            "6:00 PM-7:00 PM",
+            "8:00 PM-9:00 PM",
+            "10:00 PM-11:00 PM",
+            "11:00 PM-12:00 PM"
+
+        ]
+    },
+    {
+        "id":6,
+        "name": "AKC PLAY",
+        "price": "1500",
+        "location": "Halisohor",
+        "img": "https://i.ibb.co/b1v8mJP/akc.jpg",
+        "slots":[
+            "7:00 AM-8:00 AM",
+            "8:00 AM-9:00 AM",
+            "9:00 AM-10:00 AM",
+            "10:00 AM-11:00 AM",
+            "1100 AM-12:00 AM",
+            "12:00 PM-1:00 PM",
+            "1:00 PM-2:00 PM",
+            "2:00 PM-3:00 PM",
+            "3:00 PM-4:00 PM",
+            "4:00 PM-5:00 PM",
+            "5:00 PM-6:00 PM",
+            "6:00 PM-7:00 PM",
+            "8:00 PM-9:00 PM",
+            "10:00 PM-11:00 PM",
+            "11:00 PM-12:00 PM"
+
+        ]
+    }
+]
