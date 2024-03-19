@@ -17,7 +17,7 @@ app.use(express.json());
 
 
 
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.xk69pxb.mongodb.net/?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://470_Project:Wkns2CjYiScvixrg@cluster0.ilcuj5w.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 console.log(uri)
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
@@ -46,37 +46,37 @@ async function run() {
         const paymentsCollection = client.db('MobileBroker').collection('payments')
 
 
-        // app.get('/jwt', async (req, res) => {
-        //     const email = req.query.email;
-        //     const query = {
-        //         email: email
-        //     }
-        //     const user = await usersCollection.findOne(query)
-        //     if (user) {
-        //         const token = jwt.sign({ email }, process.env.ACCESS_TOKEN, { expiresIn: '1h' })
-        //         return res.send({ accessToken: token })
-        //     }
-        //     res.status(403).send('Unothorised User')
+        app.get('/jwt', async (req, res) => {
+            const email = req.query.email;
+            const query = {
+                email: email
+            }
+            const user = await usersCollection.findOne(query)
+            if (user) {
+                const token = jwt.sign({ email }, process.env.ACCESS_TOKEN, { expiresIn: '1h' })
+                return res.send({ accessToken: token })
+            }
+            res.status(403).send('Unothorised User')
 
-        // })
+        })
 
 
-        // app.post('/create-payment-intent', async (req, res) => {
-        //     const booking = req.body;
-        //     const price = booking.productPrice;
-        //     const amount = price * 100;
+        app.post('/create-payment-intent', async (req, res) => {
+            const booking = req.body;
+            const price = booking.productPrice;
+            const amount = price * 100;
 
-        //     const paymentIntent = await stripe.paymentIntents.create({
-        //         currency: 'usd',
-        //         amount: amount,
-        //         "payment_method_types": [
-        //             "card"
-        //         ]
-        //     });
-        //     res.send({
-        //         clientSecret: paymentIntent.client_secret,
-        //     })
-        // })
+            const paymentIntent = await stripe.paymentIntents.create({
+                currency: 'usd',
+                amount: amount,
+                "payment_method_types": [
+                    "card"
+                ]
+            });
+            res.send({
+                clientSecret: paymentIntent.client_secret,
+            })
+        })
 
         // app.post('/payments', async (req, res) => {
         //     const user = req.body;
@@ -313,6 +313,7 @@ async function run() {
         //     res.send(result)
         // })
 
+        Wkns2CjYiScvixrg
 
 
     }
