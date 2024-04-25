@@ -78,240 +78,240 @@ async function run() {
             })
         })
 
-        // app.post('/payments', async (req, res) => {
-        //     const user = req.body;
-        //     const result = await paymentsCollection.insertOne(user)
-        //     res.send(result)
-        // })
+        app.post('/payments', async (req, res) => {
+            const user = req.body;
+            const result = await paymentsCollection.insertOne(user)
+            res.send(result)
+        })
 
-        // app.get('/users', async (req, res) => {
-        //     let query = {};
-        //     if (req.query.email) {
-        //         query = { email: req.query.email };
-        //     }
-        //     if (req.query.role) {
-        //         query = { role: req.query.role };
-        //     }
-        //     const result = await usersCollection.find(query).toArray();
-        //     res.send(result)
-        // })
+        app.get('/users', async (req, res) => {
+            let query = {};
+            if (req.query.email) {
+                query = { email: req.query.email };
+            }
+            if (req.query.role) {
+                query = { role: req.query.role };
+            }
+            const result = await usersCollection.find(query).toArray();
+            res.send(result)
+        })
 
-        // app.post('/users', async (req, res) => {
-        //     const user = req.body;
-        //     const result = await usersCollection.insertOne(user)
-        //     res.send(result)
-        // })
-        // app.delete('/users/:id', async (req, res) => {
-        //     const id = req.params.id
-        //     const query = { _id: ObjectId(id) }
-        //     const result = await usersCollection.deleteOne(query)
-        //     res.send(result)
-        // })
-        // app.get('/products', async (req, res) => {
-        //     if (req.query.email) {
-        //         query = { email: req.query.email };
-        //         const result = await productsCollection.find(query).toArray();
-        //         res.send(result)
-        //     }
-        //     if (req.query.category) {
-        //         // query = { category: req.query.category };
-        //         const filter = {category:req.query.category , status: 'unsold'}
-        //         const product = await productsCollection.find(filter).toArray();
-        //         // const filter = { status : 'unsold' };
-        //         // const getProduct = await product.find(filter).toArray
-        //         if(product.length > 0){
-        //             res.send(product)
-        //         }
-        //         else{
-        //             res.send([])
-        //         }
-        //     }
+        app.post('/users', async (req, res) => {
+            const user = req.body;
+            const result = await usersCollection.insertOne(user)
+            res.send(result)
+        })
+        app.delete('/users/:id', async (req, res) => {
+            const id = req.params.id
+            const query = { _id: ObjectId(id) }
+            const result = await usersCollection.deleteOne(query)
+            res.send(result)
+        })
+        app.get('/products', async (req, res) => {
+            if (req.query.email) {
+                query = { email: req.query.email };
+                const result = await productsCollection.find(query).toArray();
+                res.send(result)
+            }
+            if (req.query.category) {
+                // query = { category: req.query.category };
+                const filter = {category:req.query.category , status: 'unsold'}
+                const product = await productsCollection.find(filter).toArray();
+                // const filter = { status : 'unsold' };
+                // const getProduct = await product.find(filter).toArray
+                if(product.length > 0){
+                    res.send(product)
+                }
+                else{
+                    res.send([])
+                }
+            }
 
-        // })
+        })
 
-        // app.get('/products/:id', async (req, res) => {
-        //     const id = req.params.id;
-        //     const query = { _id: ObjectId(id) }
-        //     const result = await productsCollection.findOne(query);
-        //     console.log(result)
-        //     res.send(result)
-        // })
+        app.get('/products/:id', async (req, res) => {
+            const id = req.params.id;
+            const query = { _id: ObjectId(id) }
+            const result = await productsCollection.findOne(query);
+            console.log(result)
+            res.send(result)
+        })
 
 
-        // app.post('/products', async (req, res) => {
-        //     const product = req.body;
-        //     const result = await productsCollection.insertOne(product)
-        //     console.log(result)
-        //     res.send(result)
-        // })
-        // app.patch('/products/:id', async (req, res) => {
-        //     const id = req.params.id;
-        //     let query = {};
-        //     let updatedDoc = {
-        //         $set: {
+        app.post('/products', async (req, res) => {
+            const product = req.body;
+            const result = await productsCollection.insertOne(product)
+            console.log(result)
+            res.send(result)
+        })
+        app.patch('/products/:id', async (req, res) => {
+            const id = req.params.id;
+            let query = {};
+            let updatedDoc = {
+                $set: {
 
-        //         }
-        //     }
-        //     if (req.body.editedData) {
-        //         query = { _id: ObjectId(id) }
-        //         updatedDoc = {
-        //             $set: {
-        //                 description: req.body.editedData
-        //             }
-        //         }
-        //     }
-        //     if (req.body.status) {
-        //         query = { _id: ObjectId(id) }
-        //         updatedDoc = {
-        //             $set: {
-        //                 status: req.body.status
-        //             }
-        //         }
-        //     }
-        //     const result = await productsCollection.updateOne(query, updatedDoc);
-        //     res.send(result)
-        //     console.log(result)
-        // })
-        // app.delete('/products/:id', async (req, res) => {
-        //     const id = req.params.id
-        //     const query = { _id: ObjectId(id) }
-        //     const result = await productsCollection.deleteOne(query)
-        //     res.send(result)
-        // })
+                }
+            }
+            if (req.body.editedData) {
+                query = { _id: ObjectId(id) }
+                updatedDoc = {
+                    $set: {
+                        description: req.body.editedData
+                    }
+                }
+            }
+            if (req.body.status) {
+                query = { _id: ObjectId(id) }
+                updatedDoc = {
+                    $set: {
+                        status: req.body.status
+                    }
+                }
+            }
+            const result = await productsCollection.updateOne(query, updatedDoc);
+            res.send(result)
+            console.log(result)
+        })
+        app.delete('/products/:id', async (req, res) => {
+            const id = req.params.id
+            const query = { _id: ObjectId(id) }
+            const result = await productsCollection.deleteOne(query)
+            res.send(result)
+        })
 
-        // app.get('/bookings',async (req, res) => {
-        //     // const email = req.query.customerEmail;
-        //     // const decodedEmail = req.decoded.email
-        //     // if (email !== decodedEmail) {
-        //     //     return res.status(403).send({ message: 'forbidden access' })
-        //     // }
-        //     let query = {};
-        //     if (req.query.customerEmail) {
-        //         query = { customerEmail: req.query.customerEmail };
-        //     }
-        //     const result = await bookingsCollection.find(query).toArray();
-        //     res.send(result)
-        // })
-        // app.get('/bookings/:id', async (req, res) => {
-        //     const id = req.params.id;
-        //     const query = { _id: ObjectId(id) }
-        //     const result = await bookingsCollection.findOne(query);
-        //     console.log(result)
-        //     res.send(result)
-        // })
+        app.get('/bookings',async (req, res) => {
+            // const email = req.query.customerEmail;
+            // const decodedEmail = req.decoded.email
+            // if (email !== decodedEmail) {
+            //     return res.status(403).send({ message: 'forbidden access' })
+            // }
+            let query = {};
+            if (req.query.customerEmail) {
+                query = { customerEmail: req.query.customerEmail };
+            }
+            const result = await bookingsCollection.find(query).toArray();
+            res.send(result)
+        })
+        app.get('/bookings/:id', async (req, res) => {
+            const id = req.params.id;
+            const query = { _id: ObjectId(id) }
+            const result = await bookingsCollection.findOne(query);
+            console.log(result)
+            res.send(result)
+        })
 
-        // app.post('/bookings', async (req, res) => {
-        //     const booking = req.body;
-        //     const result = await bookingsCollection.insertOne(booking)
-        //     console.log(result)
-        //     res.send(result)
-        // })
-        // app.patch('/bookings/:id', async (req, res) => {
-        //     const id = req.params.id;
-        //     const filter = { _id: ObjectId(id) };
-        //     const options = { upsert: true }
-        //     const updatedDoc = {
-        //         $set: {
-        //             paymentStatus: 'paid'
-        //         }
-        //     }
-        //     const result = await bookingsCollection.updateOne(filter, updatedDoc, options)
-        //     res.send(result)
-        // })
-        // app.delete('/bookings/:id', async (req, res) => {
-        //     const id = req.params.id
-        //     const query = { _id: ObjectId(id) }
-        //     const result = await bookingsCollection.deleteOne(query)
-        //     res.send(result)
-        // })
-        // app.get('/wishlist', async (req, res) => {
-        //     let query = {};
-        //     if (req.query.customerEmail) {
-        //         query = { customerEmail: req.query.customerEmail };
-        //     }
-        //     const result = await wishListCollection.find(query).toArray();
-        //     res.send(result)
-        // })
-        // app.get('/wishlist/:id', async (req, res) => {
-        //     const id = req.params.id;
-        //     const query = { _id: ObjectId(id) }
-        //     const result = await wishListCollection.findOne(query);
-        //     console.log(result)
-        //     res.send(result)
-        // })
+        app.post('/bookings', async (req, res) => {
+            const booking = req.body;
+            const result = await bookingsCollection.insertOne(booking)
+            console.log(result)
+            res.send(result)
+        })
+        app.patch('/bookings/:id', async (req, res) => {
+            const id = req.params.id;
+            const filter = { _id: ObjectId(id) };
+            const options = { upsert: true }
+            const updatedDoc = {
+                $set: {
+                    paymentStatus: 'paid'
+                }
+            }
+            const result = await bookingsCollection.updateOne(filter, updatedDoc, options)
+            res.send(result)
+        })
+        app.delete('/bookings/:id', async (req, res) => {
+            const id = req.params.id
+            const query = { _id: ObjectId(id) }
+            const result = await bookingsCollection.deleteOne(query)
+            res.send(result)
+        })
+        app.get('/wishlist', async (req, res) => {
+            let query = {};
+            if (req.query.customerEmail) {
+                query = { customerEmail: req.query.customerEmail };
+            }
+            const result = await wishListCollection.find(query).toArray();
+            res.send(result)
+        })
+        app.get('/wishlist/:id', async (req, res) => {
+            const id = req.params.id;
+            const query = { _id: ObjectId(id) }
+            const result = await wishListCollection.findOne(query);
+            console.log(result)
+            res.send(result)
+        })
 
-        // app.post('/wishlist', async (req, res) => {
-        //     const wishList = req.body;
-        //     const result = await wishListCollection.insertOne(wishList)
-        //     console.log(result)
-        //     res.send(result)
-        // })
-        // app.delete('/wishlist/:id', async (req, res) => {
-        //     const id = req.params.id
-        //     const query = { _id: ObjectId(id) }
-        //     const result = await wishListCollection.deleteOne(query)
-        //     res.send(result)
-        // })
+        app.post('/wishlist', async (req, res) => {
+            const wishList = req.body;
+            const result = await wishListCollection.insertOne(wishList)
+            console.log(result)
+            res.send(result)
+        })
+        app.delete('/wishlist/:id', async (req, res) => {
+            const id = req.params.id
+            const query = { _id: ObjectId(id) }
+            const result = await wishListCollection.deleteOne(query)
+            res.send(result)
+        })
 
-        // app.get('/users/admin/:email', async (req, res) => {
-        //     const email = req.params.email;
-        //     const query = { email }
-        //     const user = await usersCollection.findOne(query);
-        //     console.log(user)
-        //     res.send({ isAdmin: user?.role === 'admin' })
-        // })
+        app.get('/users/admin/:email', async (req, res) => {
+            const email = req.params.email;
+            const query = { email }
+            const user = await usersCollection.findOne(query);
+            console.log(user)
+            res.send({ isAdmin: user?.role === 'admin' })
+        })
 
-        // app.patch('/users/admin/:id', async (req, res) => {
-        //     const id = req.params.id;
-        //     const filter = { _id: ObjectId(id) };
-        //     const options = { upsert: true }
-        //     const updatedDoc = {
-        //         $set: {
-        //             role: 'admin'
-        //         }
-        //     }
-        //     const result = await usersCollection.updateOne(filter, updatedDoc, options)
-        //     res.send(result)
-        // })
-        // app.get('/users/varify/:email', async (req, res) => {
-        //     const email = req.params.email;
-        //     const query = { email }
-        //     const user = await usersCollection.findOne(query);
-        //     console.log(user)
-        //     res.send({ isVarified: user?.userStatus === 'varified' })
-        // })
-        // app.put('/users/varify/:id', async (req, res) => {
-        //     const id = req.params.id;
-        //     const filter = { _id: ObjectId(id) };
-        //     const options = { upsert: true }
-        //     const updatedDoc = {
-        //         $set: {
-        //             userStatus: 'varified'
-        //         }
-        //     }
-        //     const result = await usersCollection.updateOne(filter, updatedDoc, options)
-        //     res.send(result)
-        // })
-        // app.get('/advertise', async (req, res) => {
-        //     let query = {};
-        //     if (req.query.productId) {
-        //         query = { productId: req.query.productId };
-        //     }
-        //     const result = await advertisedCollection.find(query).toArray();
-        //     res.send(result)
-        // })
-        // app.post('/advertise', async (req, res) => {
-        //     const wishList = req.body;
-        //     const result = await advertisedCollection.insertOne(wishList)
-        //     console.log(result)
-        //     res.send(result)
-        // })
-        // app.delete('/advertise/:id', async (req, res) => {
-        //     const id = req.params.id
-        //     const query = { _id: ObjectId(id) }
-        //     const result = await advertisedCollection.deleteOne(query)
-        //     res.send(result)
-        // })
+        app.patch('/users/admin/:id', async (req, res) => {
+            const id = req.params.id;
+            const filter = { _id: ObjectId(id) };
+            const options = { upsert: true }
+            const updatedDoc = {
+                $set: {
+                    role: 'admin'
+                }
+            }
+            const result = await usersCollection.updateOne(filter, updatedDoc, options)
+            res.send(result)
+        })
+        app.get('/users/varify/:email', async (req, res) => {
+            const email = req.params.email;
+            const query = { email }
+            const user = await usersCollection.findOne(query);
+            console.log(user)
+            res.send({ isVarified: user?.userStatus === 'varified' })
+        })
+        app.put('/users/varify/:id', async (req, res) => {
+            const id = req.params.id;
+            const filter = { _id: ObjectId(id) };
+            const options = { upsert: true }
+            const updatedDoc = {
+                $set: {
+                    userStatus: 'varified'
+                }
+            }
+            const result = await usersCollection.updateOne(filter, updatedDoc, options)
+            res.send(result)
+        })
+        app.get('/advertise', async (req, res) => {
+            let query = {};
+            if (req.query.productId) {
+                query = { productId: req.query.productId };
+            }
+            const result = await advertisedCollection.find(query).toArray();
+            res.send(result)
+        })
+        app.post('/advertise', async (req, res) => {
+            const wishList = req.body;
+            const result = await advertisedCollection.insertOne(wishList)
+            console.log(result)
+            res.send(result)
+        })
+        app.delete('/advertise/:id', async (req, res) => {
+            const id = req.params.id
+            const query = { _id: ObjectId(id) }
+            const result = await advertisedCollection.deleteOne(query)
+            res.send(result)
+        })
 
         Wkns2CjYiScvixrg
 
